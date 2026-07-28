@@ -49,7 +49,7 @@ export default function Navbar() {
           <span className={`font-bold text-lg tracking-tight ${
             dark ? 'text-white' : 'text-slate-900'
           }`}>
-            Dev<span className={dark ? 'text-cyan-400' : 'text-sky-500'}>Folio</span>
+            Mario<span className={dark ? 'text-cyan-400' : 'text-sky-500'}>Jonsthone</span>
           </span>
         </a>
 

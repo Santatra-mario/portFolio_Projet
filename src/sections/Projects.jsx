@@ -8,7 +8,7 @@ const projects = [
     tags: ['React', 'Express', 'API REST'],
     color: 'cyan',
     github: 'https://github.com/Santatra-mario/gestionVente',
-    demo: 'https://gestionVente.vercel.app',
+    
   },
   {
     title: 'Gestion de réservation coopérative',
@@ -16,7 +16,7 @@ const projects = [
     tags: ['JSP', 'Java', 'MySQL'],
     color: 'blue',
     github: 'https://github.com',
-    demo: '#',
+    
   },
   {
     title: 'Projet IHM — UI/UX',
@@ -24,7 +24,7 @@ const projects = [
     tags: ['UI/UX', 'Figma', 'Prototypage'],
     color: 'indigo',
     github: 'Santatra-mario/gestionEtudiant',
-    demo: '#',
+    
   },
   {
     title: 'Application mobile Android',
@@ -32,7 +32,7 @@ const projects = [
     tags: ['Android', 'React Native', 'Java'],
     color: 'cyan',
     github: 'https://github.com',
-    demo: '#',
+    
   },
   {
     title: 'Gestion de vente de voiture',
@@ -40,7 +40,7 @@ const projects = [
     tags: ['Java', 'MySQL', 'Swing/JavaFX'], // Ajustez le 3ème tag selon la techno exacte
     color: 'blue',
     github: 'https://github.com',
-    demo: '#',
+    
   },
   {
     title: 'Gestion de réservation colis',
@@ -56,7 +56,7 @@ const projects = [
     tags: ['React', 'Laravel', 'API REST'],
     color: 'cyan',
     github: 'https://github.com',
-    demo: '#',
+    
   },
   {
     title: 'Gestion électricité & eau (JIRAMA)',
@@ -64,7 +64,7 @@ const projects = [
     tags: ['Laravel', 'PHP', 'MySQL'],
     color: 'blue',
     github: 'https://github.com',
-    demo: '#',
+    
   },
 ]
 // Couleurs des tags adaptées au thème
@@ -196,7 +196,7 @@ export default function Projects() {
                     ? 'text-gray-400 hover:text-cyan-400'
                     : 'text-slate-600 hover:text-sky-500'
                 }`}>
-                  <ExternalLink size={15} /> Demo
+                 
                 </a>
               </div>
             </div>

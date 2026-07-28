@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
           <span className={`font-bold text-sm ${
             dark ? 'text-white' : 'text-slate-900'
-          }`}>Port<span className={dark ? 'text-cyan-400' : 'text-sky-500'}>Folio</span></span>
+          }`}>Mario<span className={dark ? 'text-cyan-400' : 'text-sky-500'}>Jonsthone</span></span>
         </div>
         <p className={`text-sm flex items-center gap-1.5 ${
           dark ? 'text-gray-500' : 'text-slate-600'

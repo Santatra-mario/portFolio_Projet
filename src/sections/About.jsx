@@ -3,8 +3,8 @@ import { User, MapPin, GraduationCap, TrendingUp, Briefcase, Award, Code2, Smart
 import { useTheme } from '../context/ThemeContext'
 
 const stats = [
-  { label: 'Projets réalisés',        value: '20+', color: '#0ea5e9' },
-  { label: 'Technologies maîtrisées', value: '7+', color: '#818cf8' },
+  { label: 'Projets réalisés',        value: '15+', color: '#0ea5e9' },
+  { label: 'Technologies maîtrisées', value: '3+', color: '#818cf8' },
   { label: 'Années de formation',     value: '3',   color: '#f472b6' },
   { label: 'Compétitions &amp; Stages',   value: '4+',  color: '#10b981' },
 ]
