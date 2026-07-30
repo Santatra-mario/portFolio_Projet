@@ -12,7 +12,7 @@ const skillGroups = [
       { name: 'JavaScript (ES6+)', level: 88 },
       { name: 'Tailwind CSS', level: 92 },
       { name: 'HTML5 / CSS3', level: 95 },
-      { name: 'Framer Motion', level: 75 },
+      
     ],
   },
   {
@@ -24,7 +24,7 @@ const skillGroups = [
       { name: 'Express.js', level: 80 },
       { name: 'MongoDB', level: 60 },
       { name: 'REST API', level: 75 },
-      { name: 'Firebase', level: 50 },
+      
     ],
   },
   {
@@ -32,9 +32,9 @@ const skillGroups = [
     accent: 'pink',
     icon: Wrench,
     skills: [
-      { name: 'Git / GitHub', level: 90 },
+      { name: 'Git', level: 90 },
       { name: 'Vite', level: 85 },
-      { name: 'Figma', level: 40 },
+     
       { name: 'VS Code', level: 95 },
       { name: 'Postman', level: 65 },
     ],

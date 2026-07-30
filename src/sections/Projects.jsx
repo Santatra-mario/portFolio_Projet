@@ -8,6 +8,11 @@ import spa2 from '../assets/projects/vente2.png'
 import spa3 from '../assets/projects/vente3.png'
 import spa4 from '../assets/projects/vente4.png'
 
+// Images du projet "Gestion de réservation coopérative"
+import resa1 from '../assets/projects/et1.png'
+import resa2 from '../assets/projects/et2.png'
+import resa3 from '../assets/projects/et3.png'
+
 // Styles CSS animés
 const animationStyles = `
   @keyframes slideIn {
@@ -63,33 +68,12 @@ const animationStyles = `
     }
   }
 
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
   @keyframes shimmerGlow {
     0% {
       background-position: -1000px 0;
     }
     100% {
       background-position: 1000px 0;
-    }
-  }
-
-  @keyframes tiltRotate {
-    0%, 100% {
-      transform: perspective(1000px) rotateX(0) rotateY(0);
-    }
-    50% {
-      transform: perspective(1000px) rotateX(2px) rotateY(2px);
     }
   }
 
@@ -115,10 +99,6 @@ const animationStyles = `
 
   .shimmer-overlay {
     animation: shimmerGlow 3s infinite;
-  }
-
-  .tilt-effect:hover {
-    animation: tiltRotate 0.8s ease-out forwards;
   }
 
   .project-card {
@@ -161,6 +141,7 @@ const projects = [
     tags: ['UI/UX', 'Figma', 'Prototypage'],
     color: 'indigo',
     github: 'https://github.com/Santatra-mario/gestionEtudiant',
+    images: [resa1, resa2, resa3],
   },
   {
     title: 'Application mobile Android',
@@ -271,11 +252,11 @@ function ProjectImageCarousel({ images, title, iconBg }) {
 
   useEffect(() => {
     if (!autoPlay || !images || images.length <= 1) return
-    
+
     const timer = setInterval(() => {
       setIndex((i) => (i + 1) % images.length)
     }, 5000)
-    
+
     return () => clearInterval(timer)
   }, [autoPlay, images])
 
@@ -304,28 +285,24 @@ function ProjectImageCarousel({ images, title, iconBg }) {
   }
 
   return (
-    <div 
+    <div
       className="relative w-full h-48 rounded-2xl overflow-hidden group/carousel bg-gradient-to-br from-slate-800 to-slate-900"
       onMouseEnter={() => setAutoPlay(false)}
       onMouseLeave={() => setAutoPlay(true)}
     >
-      {/* Couche brillante */}
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      
-      {/* Image avec animation */}
+
       <img
         key={index}
         src={images[index]}
         alt={`${title} - image ${index + 1}`}
         className="w-full h-full object-cover animate-image-fade image-zoom-effect"
       />
-      
-      {/* Overlay graduel */}
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300" />
 
       {images.length > 1 && (
         <>
-          {/* Boutons navigation */}
           <button
             type="button"
             onClick={prev}
@@ -334,7 +311,7 @@ function ProjectImageCarousel({ images, title, iconBg }) {
           >
             <ChevronLeft size={18} />
           </button>
-          
+
           <button
             type="button"
             onClick={next}
@@ -344,7 +321,6 @@ function ProjectImageCarousel({ images, title, iconBg }) {
             <ChevronRight size={18} />
           </button>
 
-          {/* Indicateurs */}
           <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
             {images.map((_, i) => (
               <button
@@ -365,7 +341,6 @@ function ProjectImageCarousel({ images, title, iconBg }) {
             ))}
           </div>
 
-          {/* Indicateur de progression */}
           <div className="absolute top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300" style={{
             width: `${((index + 1) / images.length) * 100}%`,
             transition: 'width 0.3s ease-out'
@@ -385,45 +360,42 @@ export default function Projects() {
   const iconBgMap = dark ? iconBgMapDark : iconBgMapLight
 
   return (
-    <section 
-      id="projets" 
+    <section
+      id="projets"
       className={`py-32 relative transition-colors duration-500 overflow-hidden ${
         dark ? 'bg-gradient-to-b from-gray-950 via-gray-950 to-gray-900' : 'bg-gradient-to-b from-slate-50 via-slate-50 to-blue-50'
       }`}
     >
-      {/* Styles d'animation */}
       <style>{animationStyles}</style>
 
-      {/* Éléments de fond animés */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className={`absolute -bottom-32 -left-32 w-96 h-96 rounded-full blur-3xl ${
-          dark 
-            ? 'bg-gradient-to-tr from-cyan-500/10 via-blue-500/5 to-transparent' 
+          dark
+            ? 'bg-gradient-to-tr from-cyan-500/10 via-blue-500/5 to-transparent'
             : 'bg-gradient-to-tr from-cyan-400/15 via-blue-400/10 to-transparent'
         } animate-float`} />
-        
+
         <div className={`absolute -top-32 -right-32 w-96 h-96 rounded-full blur-3xl ${
-          dark 
-            ? 'bg-gradient-to-bl from-indigo-500/10 via-purple-500/5 to-transparent' 
+          dark
+            ? 'bg-gradient-to-bl from-indigo-500/10 via-purple-500/5 to-transparent'
             : 'bg-gradient-to-bl from-indigo-400/15 via-purple-400/10 to-transparent'
         } animate-float`} style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* En-tête de section */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 mb-6">
             <div className={`h-1 w-8 rounded-full ${
-              dark 
-                ? 'bg-gradient-to-r from-cyan-400 to-blue-500' 
+              dark
+                ? 'bg-gradient-to-r from-cyan-400 to-blue-500'
                 : 'bg-gradient-to-r from-sky-400 to-blue-500'
             }`} />
             <span className={`text-sm font-bold uppercase tracking-widest ${
               dark ? 'text-cyan-400' : 'text-sky-500'
             }`}>Portfolio</span>
             <div className={`h-1 w-8 rounded-full ${
-              dark 
-                ? 'bg-gradient-to-r from-blue-500 to-cyan-400' 
+              dark
+                ? 'bg-gradient-to-r from-blue-500 to-cyan-400'
                 : 'bg-gradient-to-r from-blue-500 to-sky-400'
             }`} />
           </div>
@@ -447,12 +419,11 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Grille de projets */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
             <div
               key={i}
-              className={`animate-slide-in project-card group rounded-3xl p-8 flex flex-col gap-6 border transition-all duration-500 backdrop-blur-sm ${
+              className={`animate-slide-in project-card group relative rounded-3xl p-8 flex flex-col gap-6 border transition-all duration-500 backdrop-blur-sm ${
                 dark
                   ? `bg-white/[0.03] border-white/10 hover:bg-white/[0.06] ${cardBorderMap[project.color]} ${hoveredIndex === i ? 'card-border-glow glow-active' : ''}`
                   : `bg-white/40 border-slate-300/50 hover:bg-white/60 ${cardBorderMap[project.color]} ${hoveredIndex === i ? 'card-border-glow-light glow-active' : ''}`
@@ -463,12 +434,10 @@ export default function Projects() {
                 animationDelay: `${i * 0.1}s`,
               }}
             >
-              {/* Brillance supérieure */}
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none overflow-hidden">
                 <div className="absolute -inset-full bg-gradient-to-br from-white/20 via-transparent to-transparent blur-xl shimmer-overlay" />
               </div>
 
-              {/* Image carrousel */}
               <div className="relative z-10">
                 <ProjectImageCarousel
                   images={project.images}
@@ -477,7 +446,6 @@ export default function Projects() {
                 />
               </div>
 
-              {/* Contenu du projet */}
               <div className="flex flex-col gap-4 relative z-10">
                 <div>
                   <h3 className={`font-bold text-xl mb-3 transition-colors duration-300 ${
@@ -492,14 +460,13 @@ export default function Projects() {
                   </p>
                 </div>
 
-                {/* Tags avec style amélioré */}
                 <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.map(tag => (
                     <span
                       key={tag}
                       className={`text-xs px-3 py-1.5 rounded-lg font-semibold transition-all duration-300 hover:scale-105 ${
-                        tagColorMap[tag] || (dark 
-                          ? 'bg-white/5 text-gray-400 border border-white/10' 
+                        tagColorMap[tag] || (dark
+                          ? 'bg-white/5 text-gray-400 border border-white/10'
                           : 'bg-slate-200 text-slate-600 border border-slate-300'
                         )
                       }`}
@@ -510,12 +477,10 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Divider */}
               <div className={`h-px ${
                 dark ? 'bg-gradient-to-r from-white/0 via-white/20 to-white/0' : 'bg-gradient-to-r from-slate-200/0 via-slate-300 to-slate-200/0'
               }`} />
 
-              {/* Boutons d'action */}
               <div className={`flex items-center gap-4 relative z-10 ${
                 dark ? 'text-gray-400' : 'text-slate-600'
               }`}>
@@ -553,7 +518,6 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Bouton CTA */}
         <div className="text-center mt-20">
           <a
             href="https://github.com/Santatra-mario"

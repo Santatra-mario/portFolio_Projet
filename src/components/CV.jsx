@@ -130,13 +130,7 @@ export default function CV() {
           </h2>
           <p className="text-xs text-gray-500 mt-1">Stage ENI L3 — 2025-2026</p>
         </div>
-        <button onClick={() => window.print()}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white
-            bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500
-            shadow-lg shadow-sky-500/25 transition-all duration-200 hover:scale-105">
-          <Icon d={IC.download} size={15} />
-          Télécharger PDF
-        </button>
+      
       </div>
 
       {/* Card */}
